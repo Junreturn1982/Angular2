@@ -1,1 +1,14 @@
 https://github.com/DeborahK/Angular2-GettingStarted
+Pluralsight Courses
+"TypeScript Fundamentals"
+"Angular with TypeScript"
+"Using ES6 with TypeScript"
+"Visual Studio Code"
+
+Setting up an Angular2 application
+Manually perform each step
+www.angular.io Quick Start
+Download the results of these steps
+https://github.com/angular/quickstart
+AngularCli
+https://github.com/angular/angular-cli
