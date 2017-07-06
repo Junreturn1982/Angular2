@@ -12,3 +12,5 @@ Download the results of these steps
 https://github.com/angular/quickstart
 AngularCli
 https://github.com/angular/angular-cli
+angular.io
+https://www.youtube.com/watch?v=PFP0oXNNveg - MEAN App From Scratch - MongoDB, Express, Angular 2 & NodeJS
