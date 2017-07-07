@@ -21,7 +21,7 @@ export class ProductListComponent implements OnInit {
     showImage: boolean = false;
     listFilter: string;
     products: IProduct[];
-    
+    // inject service in constructor
     constructor(private _productService: ProductService) {
 
     }
