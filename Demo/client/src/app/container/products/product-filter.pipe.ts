@@ -1,6 +1,6 @@
 import { PipeTransform, Pipe } from '@angular/core';
 import { IProduct } from './product';
-
+// pipe decorator
 @Pipe({
     name: 'productFilter'
 })
