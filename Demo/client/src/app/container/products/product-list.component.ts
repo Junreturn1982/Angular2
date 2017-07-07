@@ -8,8 +8,6 @@ import { IProduct } from './product';
 import { ProductService } from "./product.service";
 
 @Component({
-    // pm project manager
-    selector: 'pm-products',
     moduleId: module.id,
     templateUrl: 'product-list.component.html',
     styleUrls: ['product-list.component.css']
