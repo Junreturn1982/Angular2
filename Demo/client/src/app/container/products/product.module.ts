@@ -1,13 +1,12 @@
 // import statement
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
-import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
+
+import { SharedModule } from "app/container/shared/shared.module";
 
 import { ProductListComponent } from "app/container/products/product-list.component";
 import { ProductFilterPipe } from "app/container/products/product-filter.pipe";
 import { ProductDetailComponent } from "app/container/products/product-detail.component";
-import { StarComponent } from "app/container/shared/star.component";
 import { ProductDetailGuard } from "app/container/products/product-guard.service";
 import { ProductService } from "app/container/products/product.service";
 
@@ -16,14 +15,10 @@ import { ProductService } from "app/container/products/product.service";
     declarations: [
         ProductListComponent,
         ProductFilterPipe,
-        StarComponent,
         ProductDetailComponent
     ],
     imports: [
-        // for ngModel and two way binding
-        FormsModule,
-        // for common directives such as *ngIf *ngFor
-        CommonModule,
+        SharedModule,
         RouterModule.forChild([
         { path: 'products', component: ProductListComponent },
         { path: 'product/:id',
