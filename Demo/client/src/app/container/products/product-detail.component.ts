@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { IProduct } from './product';
 import { ProductService } from './product.service';
@@ -14,7 +14,8 @@ export class ProductDetailComponent implements OnInit {
     errorMessage: string;
     // the activated route instance is then  injected 
     // into this component class.
-    constructor(private _route: ActivatedRoute) {
+    constructor(private _route: ActivatedRoute, 
+                private _router: Router) {
 
     }
     ngOnInit(): void {
@@ -22,5 +23,7 @@ export class ProductDetailComponent implements OnInit {
         this.pageTitle += `: ${id}`;
     }
 
-    
+    onBack(): void {
+        this._router.navigate(['/products']);
+    }
 }
