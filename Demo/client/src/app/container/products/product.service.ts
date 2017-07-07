@@ -12,7 +12,8 @@ import { IProduct } from './product';
 @Injectable()
 
 export class ProductService {
-    private _productUrl = '../api/products/products.json';
+    // private _productUrl = 'api/products/products.json';
+    private _productUrl = 'http://localhost:3333/api/products/products.json';
 
     constructor(private _http: Http) {}
 
@@ -27,4 +28,10 @@ export class ProductService {
         console.error(error);
         return Observable.throw(error.json().error || 'Server error');
     }
+    /*
+    x.then(valueFn, errorFn) // Promise
+    x.subcribe(valueFn, errorFn) // Observable
+    let sub = x.subcribe(valueFn, errorFn, completeFn) // Observable
+
+    */
 }

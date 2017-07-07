@@ -1,6 +1,6 @@
 // business object
 export interface IProduct {
-    productId?: string;
+    productId: number;
     productName: string;
     productCode: string;
     releaseDate: string;

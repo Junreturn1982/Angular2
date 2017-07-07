@@ -20,14 +20,19 @@ export class ProductListComponent implements OnInit {
     imageMargin: number = 2;
     showImage: boolean = false;
     listFilter: string;
+    errorMessage: string;
+    
     products: IProduct[];
+    
     // inject service in constructor
     constructor(private _productService: ProductService) {
 
     }
     // lifecycle hook
     ngOnInit(): void {
-        this.products = this._productService.getProducts();
+        this._productService.getProducts()
+            .subscribe(products => this.products = products,
+            error => this.errorMessage = <any> error);
     }
 
     toggleImage(): void {
