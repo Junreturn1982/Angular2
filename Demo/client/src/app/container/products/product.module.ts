@@ -9,6 +9,7 @@ import { ProductFilterPipe } from "app/container/products/product-filter.pipe";
 import { ProductDetailComponent } from "app/container/products/product-detail.component";
 import { ProductDetailGuard } from "app/container/products/product-guard.service";
 import { ProductService } from "app/container/products/product.service";
+import { ProductRoutingModule } from "app/container/products/product-routing.module";
 
 // add the NgModule decorator
 @NgModule({
@@ -19,12 +20,7 @@ import { ProductService } from "app/container/products/product.service";
     ],
     imports: [
         SharedModule,
-        RouterModule.forChild([
-        { path: 'products', component: ProductListComponent },
-        { path: 'product/:id',
-        canActivate: [ ProductDetailGuard ], 
-        component: ProductDetailComponent }
-        ])
+        ProductRoutingModule
     ],
     providers: [ 
         ProductService,

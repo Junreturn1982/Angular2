@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductModule } from "app/container/products/product.module";
+import { AppRoutingModule } from "app/app-routing.module";
 
 @NgModule({
   declarations: [
@@ -15,13 +15,8 @@ import { ProductModule } from "app/container/products/product.module";
   imports: [
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot([
-      { path: 'welcome', component: WelcomeComponent },
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      // 404 not found page
-      { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
-    ]),
-    ProductModule
+    ProductModule,
+    AppRoutingModule
   ],
   bootstrap: [ AppComponent ]
 })
