@@ -53,7 +53,10 @@
                         <!-- transforming data with pipes -->
                         <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>
                         <td>
-                           <ai-star [rating]='product.starRating'></ai-star>
+                           <ai-star [rating]='product.starRating'
+                            (ratingClicked)='onRatingClicked($event)'>
+
+                           </ai-star>
                        </td>
                     </tr>
                 </tbody>
