@@ -6,6 +6,9 @@ export class ProductDetailGuard implements CanActivate {
     constructor(private _router: Router) {}
     // route snapshot: map route
     canActivate(route: ActivatedRouteSnapshot): boolean {
+        // localhost:4200/product/1
+        // route.url[0].path: product, route.url[1].path: 1
+        console.log(route.url)
         // + convert to number, pull the path from the second element
         let id = +route.url[1].path;
         if (isNaN(id) || id < 1) {
