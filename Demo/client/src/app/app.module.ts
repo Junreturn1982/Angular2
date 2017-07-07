@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ContactListComponent } from './container/contact-list/contact-list.component';
 import { ProductListComponent } from "./container/products/product-list.component";
 import { ProductFilterPipe } from "./container/products/product-filter.pipe";
+import { StarComponent } from "app/container/shared/star.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactListComponent,
     ProductListComponent,
-    ProductFilterPipe
+    ProductFilterPipe,
+    StarComponent
   ],
   imports: [
     BrowserModule,
