@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
@@ -26,7 +27,15 @@ import { StarComponent } from "app/container/shared/star.component";
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      { path: 'products', component: ProductListComponent },
+      { path: 'product/:id', component: ProductDetailComponent },
+      { path: 'welcome', component: WelcomeComponent },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      // 404 not found page
+      { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
