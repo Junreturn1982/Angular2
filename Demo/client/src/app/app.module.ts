@@ -12,6 +12,7 @@ import { ProductListComponent } from "./container/products/product-list.componen
 import { ProductDetailComponent } from "./container/products/product-detail.component";
 import { ProductFilterPipe } from "./container/products/product-filter.pipe";
 import { StarComponent } from "app/container/shared/star.component";
+import { ProductDetailGuard } from './container/products/product-guard.service';
 
 
 @NgModule({
@@ -30,14 +31,16 @@ import { StarComponent } from "app/container/shared/star.component";
     HttpModule,
     RouterModule.forRoot([
       { path: 'products', component: ProductListComponent },
-      { path: 'product/:id', component: ProductDetailComponent },
+      { path: 'product/:id',
+      canActivate: [ ProductDetailGuard ], 
+      component: ProductDetailComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       // 404 not found page
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ])
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ ProductDetailGuard ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
