@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
 })
 
 export class WelcomeComponent {
-     pageTitle: string = 'Product Detail';
+     pageTitle: string = 'Home page';
 }
